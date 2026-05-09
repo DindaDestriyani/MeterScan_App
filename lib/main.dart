@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'MeterScan',
+  await GetStorage.init();
+
+  runApp(
+    GetMaterialApp(
       initialRoute: AppRoutes.splash,
-      getPages: AppPages.routes,
-    );
-  }
+      getPages: AppPages.pages,
+    ),
+  );
 }

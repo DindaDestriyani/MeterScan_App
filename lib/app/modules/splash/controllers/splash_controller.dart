@@ -1,15 +1,25 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
-import 'package:meterscan/app/routes/app_routes.dart';
+
+import '../../../routes/app_routes.dart';
 
 class SplashController extends GetxController {
+
   @override
   void onInit() {
     super.onInit();
 
-    Future.delayed(
+    print("Splash jalan");
+
+    Timer(
       const Duration(seconds: 3),
       () {
+
+        print("Pindah login");
+
         Get.offNamed(AppRoutes.login);
+
       },
     );
   }

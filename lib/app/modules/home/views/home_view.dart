@@ -8,28 +8,29 @@ class HomeView extends StatelessWidget {
 
   final HomeController controller = Get.put(HomeController());
 
+  final Color primaryColor = const Color(0xFF0F766E);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF5F7F7),
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: primaryColor,
         unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.white,
 
         onTap: (index) {
           if (index == 0) {
-            // Beranda
+            Get.toNamed(AppRoutes.home);
           } else if (index == 1) {
             Get.toNamed(AppRoutes.riwayat);
           } else if (index == 2) {
-            // Notifikasi
+            Get.toNamed(AppRoutes.notifikasi);
           } else if (index == 3) {
-            // Profil
+            Get.toNamed(AppRoutes.profile);
           }
         },
 
@@ -45,112 +46,270 @@ class HomeView extends StatelessWidget {
       ),
 
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Greeting
-              Obx(
-                () => Text(
-                  "Hai, ${controller.username.value} 👋",
-                  style: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // LOGO HEADER
+                Row(
+                  children: [
+                    Icon(Icons.bolt, color: primaryColor, size: 28),
+
+                    const SizedBox(width: 8),
+
+                    Text(
+                      "MeterScan",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: primaryColor,
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 25),
+
+                // GREETING
+                Obx(
+                  () => Text(
+                    "Hai, ${controller.username.value} 👋",
+                    style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF0F172A),
+                    ),
                   ),
                 ),
-              ),
 
-              const SizedBox(height: 10),
+                const SizedBox(height: 8),
 
-              const Text(
-                "Pilih jenis layanan listrik yang ingin Anda kelola",
-                style: TextStyle(fontSize: 16, color: Colors.grey),
-              ),
+                const Text(
+                  "Kelola penggunaan listrikmu\ndengan mudah",
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                    height: 1.5,
+                  ),
+                ),
 
-              const SizedBox(height: 40),
+                const SizedBox(height: 25),
 
-              // Prabayar Card
-              modeCard(
-                title: "Prabayar",
-                subtitle: "Pantau sisa token listrik dan estimasi habis",
-                icon: Icons.bolt,
-                color: Colors.green,
-                onTap: controller.goToPrabayar,
-              ),
+                // RINGKASAN BULAN INI
+                Obx(() {
+                  final prabayar = controller.prabayarData.value;
+                  final pascabayar = controller.pascabayarData.value;
 
-              const SizedBox(height: 20),
+                  Widget buildPrabayar() {
+                    if (prabayar == null) {
+                      return const Text(
+                        "Belum ada data penggunaan",
+                        style: TextStyle(color: Colors.white70),
+                      );
+                    }
 
-              // Pascabayar Card
-              modeCard(
-                title: "Pascabayar",
-                subtitle: "Pantau pemakaian listrik dan estimasi tagihan",
-                icon: Icons.receipt_long,
-                color: Colors.blue,
-                onTap: controller.goToPascabayar,
-              ),
-            ],
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Prabayar",
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                        ),
+                        const SizedBox(height: 10),
+                        const Text(
+                          "Sisa Token",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                        Text(
+                          "${prabayar.sisaToken} kWh",
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          "Estimasi habis ${prabayar.estimasiHabis}",
+                          style: const TextStyle(color: Colors.white70),
+                        ),
+                      ],
+                    );
+                  }
+
+                  Widget buildPascabayar() {
+                    if (pascabayar == null) {
+                      return const Text(
+                        "Belum ada data penggunaan",
+                        style: TextStyle(color: Colors.white70),
+                      );
+                    }
+
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Pascabayar",
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                        ),
+                        const SizedBox(height: 10),
+                        const Text(
+                          "Estimasi Tagihan",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                        Text(
+                          "Rp${pascabayar.tagihan}",
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          "${pascabayar.kwh} kWh bulan ini",
+                          style: const TextStyle(color: Colors.white70),
+                        ),
+                      ],
+                    );
+                  }
+
+                  return Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Ringkasan Bulan Ini",
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                        ),
+
+                        const SizedBox(height: 20),
+
+                        buildPrabayar(),
+
+                        const SizedBox(height: 20),
+
+                        buildPascabayar(),
+                      ],
+                    ),
+                  );
+                }),
+
+                const SizedBox(height: 30),
+
+                // LAYANAN
+                const Text(
+                  "Layanan",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+
+                const SizedBox(height: 20),
+
+                // CARD KIRI KANAN
+                Row(
+                  children: [
+                    Expanded(
+                      child: serviceCard(
+                        title: "Prabayar",
+                        subtitle: "Pantau token listrik",
+                        icon: Icons.bolt,
+                        onTap: controller.goToPrabayar,
+                      ),
+                    ),
+
+                    const SizedBox(width: 16),
+
+                    Expanded(
+                      child: serviceCard(
+                        title: "Pascabayar",
+                        subtitle: "Pantau tagihan listrik",
+                        icon: Icons.receipt_long,
+                        onTap: controller.goToPascabayar,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget modeCard({
+  Widget serviceCard({
     required String title,
     required String subtitle,
     required IconData icon,
-    required Color color,
     required VoidCallback onTap,
   }) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(20),
+
       child: Container(
+        height: 180,
         padding: const EdgeInsets.all(20),
+
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.15),
+              color: Colors.grey.withOpacity(0.12),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
           ],
         ),
-        child: Row(
+
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 60,
-              height: 60,
+              width: 55,
+              height: 55,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: primaryColor.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(14),
               ),
-              child: Icon(icon, color: color, size: 30),
+              child: Icon(icon, color: primaryColor, size: 28),
             ),
 
-            const SizedBox(width: 16),
-
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(height: 6),
-                  Text(subtitle, style: const TextStyle(color: Colors.grey)),
-                ],
-              ),
+                ),
+
+                const SizedBox(height: 8),
+
+                Text(
+                  subtitle,
+                  style: const TextStyle(color: Colors.grey, fontSize: 13),
+                ),
+              ],
             ),
 
-            const Icon(Icons.arrow_forward_ios, color: Colors.blue),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Icon(Icons.arrow_forward, color: primaryColor),
+            ),
           ],
         ),
       ),

@@ -3,11 +3,24 @@ abstract class AppRoutes {
   static const login = '/login';
   static const register = '/register';
   static const home = '/home';
+
+  static const prabayarDashboard =
+      '/prabayar-dashboard';
+
+  static const inputToken =
+      '/input-token';
+
+  static const scanToken =
+      '/scan-token';
   static const prabayar = '/prabayar';
   static const pascabayar = '/pascabayar';
-  static const scanToken = '/scan-token';
   static const dashboardPrabayar = '/dashboard-prabayar';
+  static const dashboardPasca = '/pascabayar/dashboard';
   static const grafikPemakaianPrabayar = '/grafik-pemakaian-prabayar';
   static const grafikBiayaPrabayar = '/grafik-biaya-prabayar';
   static const riwayat = '/riwayat';
+  static const notifikasi = '/notifikasi';
+  static const profile = '/profile';
+  static const reminder = '/reminder';
+  static const editProfile = '/edit-profile';
 }
