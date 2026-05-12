@@ -67,11 +67,25 @@ class InputTokenView
               const SizedBox(height: 10),
 
               buildTextField(
+<<<<<<< HEAD
                 controller: controller.nominalC,
                 hint: "Rp 50.000",
                 keyboardType: TextInputType.number,
                 onChanged: controller.formatNominal,
               ),
+=======
+                controller:
+                    controller.nominalC,
+                hint: "Contoh: 100000",
+                keyboardType:
+                    TextInputType.number,
+                onChanged: (value) {
+                  controller
+                      .calculateKwh();
+                },
+              ),
+
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
               const SizedBox(height: 25),
 
               /// TARIF LISTRIK

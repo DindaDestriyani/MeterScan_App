@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+<<<<<<< HEAD
 import '../../../routes/app_routes.dart';
 import '../controllers/riwayat_controller.dart';
 
@@ -8,10 +9,23 @@ class RiwayatView extends GetView<RiwayatController> {
   RiwayatView({super.key});
 
   final Color primaryColor = const Color(0xFF0F766E);
+=======
+class RiwayatView extends StatelessWidget {
+  RiwayatView({super.key});
+
+  final RxString selectedFilter = "Semua".obs;
+
+  final List<String> filters = [
+    "Semua",
+    "Prabayar",
+    "Pascabayar",
+  ];
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: const Color(0xFFF3F5F5),
 
       // =========================
@@ -1126,6 +1140,58 @@ class RiwayatView extends GetView<RiwayatController> {
                 ),
               ],
             ),
+=======
+      appBar: AppBar(
+        title: const Text("Riwayat"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Get.back(),
+        ),
+      ),
+      body: Column(
+        children: [
+          const SizedBox(height: 16),
+
+          // 🔵 FILTER BUTTON
+          Obx(() {
+            return SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: filters.map((item) {
+                  final isSelected = selectedFilter.value == item;
+
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    child: ChoiceChip(
+                      label: Text(item),
+                      selected: isSelected,
+                      onSelected: (val) {
+                        selectedFilter.value = item;
+                      },
+                      selectedColor: Colors.blue,
+                      labelStyle: TextStyle(
+                        color: isSelected ? Colors.white : Colors.black,
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            );
+          }),
+
+          const SizedBox(height: 20),
+
+          // 🔵 CONTENT RIWAYAT
+          Expanded(
+            child: Obx(() {
+              return Center(
+                child: Text(
+                  "Filter dipilih: ${selectedFilter.value}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              );
+            }),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
           ),
         ],
       ),

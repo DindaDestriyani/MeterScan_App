@@ -1,20 +1,30 @@
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:meterscan/app/modules/notifikasi/bindings/notifikasi_binding.dart';
 import 'package:meterscan/app/modules/pascabayar/hasil_scan/bindings/hasil_scan_binding.dart';
 import 'package:meterscan/app/modules/pascabayar/hasil_scan/views/hasil_scan_view.dart';
 import 'package:meterscan/app/modules/pascabayar/input_meter/bindings/input_meter_binding.dart';
 import 'package:meterscan/app/modules/pascabayar/input_meter/views/input_meter_view.dart';
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
 import 'package:meterscan/app/modules/splash/views/splash_view.dart';
 
 import 'package:meterscan/app/modules/login/views/login_view.dart';
 import 'package:meterscan/app/modules/login/bindings/login_binding.dart';
+<<<<<<< HEAD
 import '../modules/pascabayar/input_meter/bindings/input_meter_binding.dart';
 
 import 'package:meterscan/app/modules/register/views/register_view.dart';
 import 'package:meterscan/app/modules/register/bindings/register_binding.dart';
 import '../modules/riwayat/bindings/riwayat_binding.dart';
 import '../modules/riwayat/views/riwayat_view.dart';
+=======
+
+import 'package:meterscan/app/modules/register/views/register_view.dart';
+import 'package:meterscan/app/modules/register/bindings/register_binding.dart';
+
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 import 'package:meterscan/app/modules/home/views/home_view.dart';
 
 // import 'package:meterscan/app/modules/prabayar/dashboard/views/dashboard_view.dart';
@@ -125,6 +135,7 @@ class AppPages {
       binding: pasca.DashboardBinding(),
     ),
 
+<<<<<<< HEAD
     // GetPage(
     //   name: AppRoutes.inputMeterPascabayar,
     //   page: () => InputMeterView(),
@@ -158,6 +169,11 @@ class AppPages {
       name: AppRoutes.riwayat,
       page: () => RiwayatView(),
       binding: RiwayatBinding(),
+=======
+    GetPage(
+      name: AppRoutes.riwayat,
+      page: () => RiwayatView(),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
     ),
 
     // GetPage(
@@ -169,12 +185,15 @@ class AppPages {
       name: AppRoutes.notifikasi,
       page: () => NotifikasiView(),
     ),
+<<<<<<< HEAD
     
     GetPage(
       name: '/notifikasi',
       page: () => NotifikasiView(),
       binding: NotifikasiBinding(),
     ),
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
     GetPage(
       name: AppRoutes.profile,

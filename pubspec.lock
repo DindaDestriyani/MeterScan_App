@@ -296,6 +296,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.2"
+<<<<<<< HEAD
   intl:
     dependency: "direct main"
     description:
@@ -304,6 +305,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.19.0"
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
   jni:
     dependency: transitive
     description:

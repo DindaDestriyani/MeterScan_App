@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:intl/intl.dart';
 
 import 'package:meterscan/app/routes/app_routes.dart';
@@ -120,14 +121,52 @@ class InputTokenController extends GetxController {
     double tariff = getTariffValue();
 
     double result = nominal / tariff;
+=======
+import 'package:meterscan/app/routes/app_routes.dart';
+
+class InputTokenController
+    extends GetxController {
+  final meterC = TextEditingController();
+  final nominalC =
+      TextEditingController();
+
+  var totalKwh = "0.00".obs;
+
+  var tariffList = [
+    "1467",
+    "1699",
+    "1444",
+  ];
+
+  var selectedTariff = "1467".obs;
+
+  void calculateKwh() {
+    double nominal =
+        double.tryParse(
+              nominalC.text,
+            ) ??
+            0;
+
+    double tariff =
+        double.parse(
+      selectedTariff.value,
+    );
+
+    double result =
+        nominal / tariff;
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
     totalKwh.value =
         result.toStringAsFixed(2);
   }
 
+<<<<<<< HEAD
   // ================= SIMPAN =================
   void saveToken() {
 
+=======
+  void saveToken() {
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
     Get.snackbar(
       "Berhasil",
       "Token berhasil disimpan",
@@ -137,6 +176,7 @@ class InputTokenController extends GetxController {
       AppRoutes.scanToken,
     );
   }
+<<<<<<< HEAD
 
   @override
   void onClose() {
@@ -144,4 +184,6 @@ class InputTokenController extends GetxController {
     nominalC.dispose();
     super.onClose();
   }
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 }

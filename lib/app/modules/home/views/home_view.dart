@@ -76,7 +76,11 @@ class HomeView extends StatelessWidget {
                 // GREETING
                 Obx(
                   () => Text(
+<<<<<<< HEAD
                     "Hai, ${controller.username.value} ",
+=======
+                    "Hai, ${controller.username.value} 👋",
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                     style: const TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,

@@ -7,11 +7,17 @@ import '../controllers/dashboard_controller.dart';
 class DashboardView extends GetView<DashboardController> {
   DashboardView({super.key});
 
+<<<<<<< HEAD
   final Color primaryColor = const Color(0xFF0F766E);
+=======
+  final Color primaryColor =
+      const Color(0xFF0F766E);
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: const Color(0xFFF3F5F5),
 
       body: SafeArea(
@@ -20,10 +26,21 @@ class DashboardView extends GetView<DashboardController> {
 
           child: Padding(
             padding: const EdgeInsets.all(22),
+=======
+      backgroundColor:
+          const Color(0xFFF3F5F5),
+
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding:
+                const EdgeInsets.all(22),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
             child: Column(
               crossAxisAlignment:
                   CrossAxisAlignment.start,
+<<<<<<< HEAD
 
               children: [
 
@@ -63,10 +80,17 @@ class DashboardView extends GetView<DashboardController> {
                 // TOKEN CARD
                 // =========================
 
+=======
+              children: [
+                const SizedBox(height: 10),
+
+                /// CARD TOKEN
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                 buildTokenCard(),
 
                 const SizedBox(height: 25),
 
+<<<<<<< HEAD
                 // =========================
                 // STATUS
                 // =========================
@@ -74,6 +98,11 @@ class DashboardView extends GetView<DashboardController> {
                 Row(
                   children: [
 
+=======
+                /// STATUS
+                Row(
+                  children: [
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                     Expanded(
                       child: buildStatusCard(),
                     ),
@@ -88,14 +117,19 @@ class DashboardView extends GetView<DashboardController> {
 
                 const SizedBox(height: 28),
 
+<<<<<<< HEAD
                 // =========================
                 // CHART
                 // =========================
 
+=======
+                /// GRAFIK
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                 buildChart(),
 
                 const SizedBox(height: 35),
 
+<<<<<<< HEAD
                 // =========================
                 // HISTORY TITLE
                 // =========================
@@ -107,15 +141,28 @@ class DashboardView extends GetView<DashboardController> {
                     letterSpacing: 2,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
+=======
+                /// RIWAYAT
+                const Text(
+                  "RIWAYAT TERBARU",
+                  style: TextStyle(
+                    letterSpacing: 2,
+                    fontSize: 16,
+                    fontWeight:
+                        FontWeight.w600,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                   ),
                 ),
 
                 const SizedBox(height: 20),
 
+<<<<<<< HEAD
                 // =========================
                 // HISTORY CARD
                 // =========================
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                 buildHistoryCard(
                   Icons.edit_note,
                   "Pencatatan Token Manual",
@@ -141,6 +188,7 @@ class DashboardView extends GetView<DashboardController> {
     );
   }
 
+<<<<<<< HEAD
   // =====================================================
   // TOKEN CARD
   // =====================================================
@@ -151,6 +199,12 @@ class DashboardView extends GetView<DashboardController> {
 
       padding: const EdgeInsets.all(28),
 
+=======
+  Widget buildTokenCard() {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(28),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -158,6 +212,7 @@ class DashboardView extends GetView<DashboardController> {
             Colors.teal.shade300,
           ],
         ),
+<<<<<<< HEAD
 
         borderRadius:
             BorderRadius.circular(28),
@@ -172,6 +227,17 @@ class DashboardView extends GetView<DashboardController> {
           const Text(
             "Sisa Token",
 
+=======
+        borderRadius:
+            BorderRadius.circular(28),
+      ),
+      child: Column(
+        crossAxisAlignment:
+            CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Sisa Token",
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
@@ -182,11 +248,19 @@ class DashboardView extends GetView<DashboardController> {
 
           const Text(
             "Rp 75.000",
+<<<<<<< HEAD
 
             style: TextStyle(
               color: Colors.white,
               fontSize: 42,
               fontWeight: FontWeight.bold,
+=======
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 42,
+              fontWeight:
+                  FontWeight.bold,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             ),
           ),
 
@@ -194,7 +268,10 @@ class DashboardView extends GetView<DashboardController> {
 
           const Text(
             "48.5 kWh tersisa",
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,
@@ -206,12 +283,15 @@ class DashboardView extends GetView<DashboardController> {
           ElevatedButton(
             onPressed:
                 controller.goToInputToken,
+<<<<<<< HEAD
 
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.white,
               foregroundColor: primaryColor,
             ),
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             child: const Text(
               "Catat Token Baru",
             ),
@@ -221,6 +301,7 @@ class DashboardView extends GetView<DashboardController> {
     );
   }
 
+<<<<<<< HEAD
   // =====================================================
   // STATUS CARD
   // =====================================================
@@ -229,11 +310,18 @@ class DashboardView extends GetView<DashboardController> {
     return Container(
       padding: const EdgeInsets.all(22),
 
+=======
+  Widget buildStatusCard() {
+    return Container(
+      padding:
+          const EdgeInsets.all(22),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius:
             BorderRadius.circular(22),
       ),
+<<<<<<< HEAD
 
       child: Column(
         crossAxisAlignment:
@@ -252,6 +340,21 @@ class DashboardView extends GetView<DashboardController> {
               color: primaryColor,
               fontSize: 24,
               fontWeight: FontWeight.bold,
+=======
+      child: Column(
+        crossAxisAlignment:
+            CrossAxisAlignment.start,
+        children: [
+          const Text("Status"),
+          const SizedBox(height: 20),
+          Text(
+            "HEMAT",
+            style: TextStyle(
+              color: primaryColor,
+              fontSize: 24,
+              fontWeight:
+                  FontWeight.bold,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             ),
           ),
         ],
@@ -259,6 +362,7 @@ class DashboardView extends GetView<DashboardController> {
     );
   }
 
+<<<<<<< HEAD
   // =====================================================
   // TODAY CARD
   // =====================================================
@@ -267,11 +371,18 @@ class DashboardView extends GetView<DashboardController> {
     return Container(
       padding: const EdgeInsets.all(22),
 
+=======
+  Widget buildTodayCard() {
+    return Container(
+      padding:
+          const EdgeInsets.all(22),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius:
             BorderRadius.circular(22),
       ),
+<<<<<<< HEAD
 
       child: const Column(
         crossAxisAlignment:
@@ -289,6 +400,20 @@ class DashboardView extends GetView<DashboardController> {
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
+=======
+      child: const Column(
+        crossAxisAlignment:
+            CrossAxisAlignment.start,
+        children: [
+          Text("Hari Ini"),
+          SizedBox(height: 20),
+          Text(
+            "3.2 kWh",
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight:
+                  FontWeight.bold,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             ),
           ),
         ],
@@ -296,6 +421,7 @@ class DashboardView extends GetView<DashboardController> {
     );
   }
 
+<<<<<<< HEAD
   // =====================================================
   // CHART
   // =====================================================
@@ -558,6 +684,55 @@ class DashboardView extends GetView<DashboardController> {
   // =====================================================
   // HISTORY CARD
   // =====================================================
+=======
+  Widget buildChart() {
+    return Container(
+      padding:
+          const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius:
+            BorderRadius.circular(25),
+      ),
+      child: SizedBox(
+        height: 250,
+        child: BarChart(
+          BarChartData(
+            alignment:
+                BarChartAlignment
+                    .spaceAround,
+            barGroups: [
+              makeBar(0, 3),
+              makeBar(1, 4),
+              makeBar(2, 2),
+              makeBar(3, 5),
+              makeBar(4, 6),
+              makeBar(5, 4),
+              makeBar(6, 3),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  BarChartGroupData makeBar(
+    int x,
+    double y,
+  ) {
+    return BarChartGroupData(
+      x: x,
+      barRods: [
+        BarChartRodData(
+          toY: y,
+          width: 20,
+          borderRadius:
+              BorderRadius.circular(8),
+        ),
+      ],
+    );
+  }
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
   Widget buildHistoryCard(
     IconData icon,
@@ -567,13 +742,19 @@ class DashboardView extends GetView<DashboardController> {
     Color color,
   ) {
     return Container(
+<<<<<<< HEAD
       padding: const EdgeInsets.all(20),
 
+=======
+      padding:
+          const EdgeInsets.all(20),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius:
             BorderRadius.circular(24),
       ),
+<<<<<<< HEAD
 
       child: Row(
         children: [
@@ -582,6 +763,13 @@ class DashboardView extends GetView<DashboardController> {
             backgroundColor:
                 color.withOpacity(0.1),
 
+=======
+      child: Row(
+        children: [
+          CircleAvatar(
+            backgroundColor:
+                color.withOpacity(0.1),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             child: Icon(
               icon,
               color: color,
@@ -594,6 +782,7 @@ class DashboardView extends GetView<DashboardController> {
             child: Column(
               crossAxisAlignment:
                   CrossAxisAlignment.start,
+<<<<<<< HEAD
 
               children: [
 
@@ -608,10 +797,16 @@ class DashboardView extends GetView<DashboardController> {
                     color: Colors.grey,
                   ),
                 ),
+=======
+              children: [
+                Text(title),
+                Text(date),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
               ],
             ),
           ),
 
+<<<<<<< HEAD
           Text(
             value,
 
@@ -620,6 +815,9 @@ class DashboardView extends GetView<DashboardController> {
               fontWeight: FontWeight.bold,
             ),
           ),
+=======
+          Text(value),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
         ],
       ),
     );

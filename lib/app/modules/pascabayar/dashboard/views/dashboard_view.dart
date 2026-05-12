@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:meterscan/app/routes/app_routes.dart';
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
@@ -19,6 +22,40 @@ class DashboardView extends GetView<DashboardController> {
     return Scaffold(
       backgroundColor: const Color(0xFFF3F6F6),
 
+<<<<<<< HEAD
+=======
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: const Color(0xFF94A3B8),
+
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'Beranda',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.speed_outlined),
+            label: 'Meter',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'Riwayat',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'Profile',
+          ),
+        ],
+      ),
+
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -31,6 +68,7 @@ class DashboardView extends GetView<DashboardController> {
               ),
 
               child: Column(
+<<<<<<< HEAD
                 crossAxisAlignment:
                     CrossAxisAlignment.start,
 
@@ -65,6 +103,30 @@ class DashboardView extends GetView<DashboardController> {
 
                           color: greenColor,
                         ),
+=======
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+                  // HEADER
+                  Row(
+                    mainAxisAlignment:
+                        MainAxisAlignment.spaceBetween,
+
+                    children: [
+                      Text(
+                        'MeterScan',
+                        style: TextStyle(
+                          fontSize:
+                              isDesktop ? 34 : 26,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green.shade700,
+                        ),
+                      ),
+
+                      Icon(
+                        Icons.notifications_none,
+                        size: isDesktop ? 34 : 30,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                       ),
                     ],
                   ),
@@ -73,8 +135,12 @@ class DashboardView extends GetView<DashboardController> {
                     height: isDesktop ? 45 : 30,
                   ),
 
+<<<<<<< HEAD
                   // ================= ESTIMASI =================
 
+=======
+                  // ESTIMASI TAGIHAN
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                   Container(
                     width: double.infinity,
 
@@ -95,14 +161,20 @@ class DashboardView extends GetView<DashboardController> {
 
                     child: Stack(
                       children: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                         Positioned(
                           right: 10,
                           top: -40,
 
                           child: Text(
                             '4',
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                             style: TextStyle(
                               fontSize:
                                   isDesktop ? 170 : 120,
@@ -121,10 +193,15 @@ class DashboardView extends GetView<DashboardController> {
                               CrossAxisAlignment.start,
 
                           children: [
+<<<<<<< HEAD
 
                             Text(
                               'Estimasi Tagihan Bulan Depan',
 
+=======
+                            Text(
+                              'Estimasi Tagihan Bulan Depan',
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                               style: TextStyle(
                                 fontSize:
                                     isDesktop ? 22 : 18,
@@ -142,7 +219,10 @@ class DashboardView extends GetView<DashboardController> {
                                       .spaceBetween,
 
                               children: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment:
@@ -150,11 +230,17 @@ class DashboardView extends GetView<DashboardController> {
                                             .start,
 
                                     children: [
+<<<<<<< HEAD
 
                                       Obx(
                                         () => Text(
                                           'Rp ${controller.estimasiTagihan.value}',
 
+=======
+                                      Obx(
+                                        () => Text(
+                                          'Rp ${controller.estimasiTagihan.value}',
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                                           style:
                                               TextStyle(
                                             fontSize:
@@ -224,7 +310,10 @@ class DashboardView extends GetView<DashboardController> {
 
                                   child: Column(
                                     children: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                                       Text(
                                         'Masa Pakai',
 
@@ -270,6 +359,7 @@ class DashboardView extends GetView<DashboardController> {
                     height: isDesktop ? 40 : 30,
                   ),
 
+<<<<<<< HEAD
                   SizedBox(
                     width: double.infinity,
                     height: 55,
@@ -311,13 +401,19 @@ class DashboardView extends GetView<DashboardController> {
 
                   // ================= GRID =================
 
+=======
+                  // DESKTOP GRID
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                   isDesktop
                       ? Row(
                           crossAxisAlignment:
                               CrossAxisAlignment.start,
 
                           children: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                             Expanded(
                               child:
                                   buildBudgetCard(
@@ -336,9 +432,15 @@ class DashboardView extends GetView<DashboardController> {
                           ],
                         )
 
+<<<<<<< HEAD
                       : Column(
                           children: [
 
+=======
+                      // MOBILE
+                      : Column(
+                          children: [
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                             buildBudgetCard(
                               isDesktop,
                             ),
@@ -351,7 +453,11 @@ class DashboardView extends GetView<DashboardController> {
                           ],
                         ),
 
+<<<<<<< HEAD
                   const SizedBox(height: 40),
+=======
+                  const SizedBox(height: 100),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                 ],
               ),
             ),
@@ -365,6 +471,7 @@ class DashboardView extends GetView<DashboardController> {
 
   Widget buildBudgetCard(bool isDesktop) {
     return Column(
+<<<<<<< HEAD
       crossAxisAlignment:
           CrossAxisAlignment.start,
 
@@ -373,6 +480,13 @@ class DashboardView extends GetView<DashboardController> {
         Row(
           children: [
 
+=======
+      crossAxisAlignment: CrossAxisAlignment.start,
+
+      children: [
+        Row(
+          children: [
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             Icon(
               Icons.account_balance_wallet_outlined,
               color: greenColor,
@@ -383,10 +497,15 @@ class DashboardView extends GetView<DashboardController> {
 
             Text(
               'Budgeting',
+<<<<<<< HEAD
 
               style: TextStyle(
                 fontSize:
                     isDesktop ? 24 : 18,
+=======
+              style: TextStyle(
+                fontSize: isDesktop ? 24 : 18,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
               ),
             ),
           ],
@@ -417,16 +536,24 @@ class DashboardView extends GetView<DashboardController> {
                 CrossAxisAlignment.start,
 
             children: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
               Row(
                 mainAxisAlignment:
                     MainAxisAlignment.spaceBetween,
 
                 children: [
+<<<<<<< HEAD
 
                   Text(
                     'Anggaran Terpakai',
 
+=======
+                  Text(
+                    'Anggaran Terpakai',
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                     style: TextStyle(
                       fontSize:
                           isDesktop ? 22 : 18,
@@ -438,7 +565,10 @@ class DashboardView extends GetView<DashboardController> {
 
                   Text(
                     'Target: Rp 200.000',
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                     style: TextStyle(
                       fontSize:
                           isDesktop ? 18 : 15,
@@ -506,7 +636,10 @@ class DashboardView extends GetView<DashboardController> {
                       CrossAxisAlignment.start,
 
                   children: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
                     Icon(
                       Icons.warning_amber_rounded,
                       color: orangeColor,
@@ -540,6 +673,7 @@ class DashboardView extends GetView<DashboardController> {
 
   Widget buildChartCard(bool isDesktop) {
     return Column(
+<<<<<<< HEAD
       crossAxisAlignment:
           CrossAxisAlignment.start,
 
@@ -548,6 +682,13 @@ class DashboardView extends GetView<DashboardController> {
         Row(
           children: [
 
+=======
+      crossAxisAlignment: CrossAxisAlignment.start,
+
+      children: [
+        Row(
+          children: [
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             Icon(
               Icons.bar_chart,
               color: greenColor,
@@ -558,12 +699,17 @@ class DashboardView extends GetView<DashboardController> {
 
             Text(
               'Penggunaan Harian',
+<<<<<<< HEAD
 
               style: TextStyle(
                 fontSize:
                     isDesktop ? 24 : 18,
 
                 fontWeight: FontWeight.w600,
+=======
+              style: TextStyle(
+                fontSize: isDesktop ? 24 : 18,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
               ),
             ),
           ],
@@ -590,6 +736,7 @@ class DashboardView extends GetView<DashboardController> {
           ),
 
           child: Column(
+<<<<<<< HEAD
             crossAxisAlignment:
                 CrossAxisAlignment.start,
 
@@ -692,6 +839,12 @@ class DashboardView extends GetView<DashboardController> {
               SizedBox(
                 height:
                     isDesktop ? 320 : 230,
+=======
+            children: [
+              SizedBox(
+                height:
+                    isDesktop ? 380 : 260,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
                 child: Row(
                   mainAxisAlignment:
@@ -703,6 +856,7 @@ class DashboardView extends GetView<DashboardController> {
 
                   children: List.generate(
                     controller.hari.length,
+<<<<<<< HEAD
 
                     (index) {
 
@@ -760,6 +914,86 @@ class DashboardView extends GetView<DashboardController> {
                             ),
 
                             const SizedBox(height: 10),
+=======
+                    (index) {
+                      return Expanded(
+                        child: Column(
+                          mainAxisAlignment:
+                              MainAxisAlignment
+                                  .end,
+
+                          children: [
+                            Row(
+                              mainAxisAlignment:
+                                  MainAxisAlignment
+                                      .center,
+
+                              crossAxisAlignment:
+                                  CrossAxisAlignment
+                                      .end,
+
+                              children: [
+                                Container(
+                                  width:
+                                      isDesktop
+                                          ? 18
+                                          : 14,
+
+                                  height:
+                                      controller
+                                              .kwhData[index] *
+                                          (isDesktop
+                                              ? 36
+                                              : 28),
+
+                                  decoration:
+                                      BoxDecoration(
+                                    color:
+                                        greenColor,
+
+                                    borderRadius:
+                                        BorderRadius.circular(
+                                      4,
+                                    ),
+                                  ),
+                                ),
+
+                                SizedBox(
+                                  width:
+                                      isDesktop
+                                          ? 8
+                                          : 5,
+                                ),
+
+                                Container(
+                                  width:
+                                      isDesktop
+                                          ? 18
+                                          : 14,
+
+                                  height:
+                                      controller
+                                              .kwhData[index] *
+                                          (isDesktop
+                                              ? 32
+                                              : 24),
+
+                                  decoration:
+                                      BoxDecoration(
+                                    color:
+                                        orangeColor,
+
+                                    borderRadius:
+                                        BorderRadius.circular(
+                                      4,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            const SizedBox(height: 14),
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
                             Text(
                               controller.hari[index],
@@ -767,8 +1001,13 @@ class DashboardView extends GetView<DashboardController> {
                               style: TextStyle(
                                 fontSize:
                                     isDesktop
+<<<<<<< HEAD
                                         ? 15
                                         : 12,
+=======
+                                        ? 18
+                                        : 15,
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
 
                                 color:
                                     const Color(
@@ -783,6 +1022,7 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                 ),
               ),
+<<<<<<< HEAD
 
               const SizedBox(height: 24),
 
@@ -868,10 +1108,16 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                 ],
               ),
+=======
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
             ],
           ),
         ),
       ],
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ec542c32a7fc06d81a6f639478350ffe94367489
